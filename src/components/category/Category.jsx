@@ -1,12 +1,7 @@
 import { useEffect, useState } from "react"
 
-
-
-
 function Category() {
     const [categories, setCategories] = useState([]);
-
-
 
     useEffect(() => {
         const getCategories = () => {
