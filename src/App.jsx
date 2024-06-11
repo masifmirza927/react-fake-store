@@ -3,6 +3,8 @@ import './App.css'
 import Navbar from './components/navbar/Navbar'
 import Header from './components/header/Header'
 import headerBg from "./images/header-bg.avif"
+import Features from './components/features/Features'
+import Category from './components/category/Category'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,6 +14,8 @@ function App() {
       <div className='header' style={{ backgroundImage: `url(${headerBg})` }}>
         <Navbar />
         <Header />
+        <Features />
+        <Category />
       </div>
 
     </>
