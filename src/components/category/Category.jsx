@@ -1,18 +1,23 @@
 import { useEffect, useState } from "react"
+import axios from "axios";
 
 function Category() {
     const [categories, setCategories] = useState([]);
+    const [isLoading, setIslaoding] = useState(false);
+
 
     useEffect(() => {
-        const getCategories = () => {
-            fetch("https://6666d762a2f8516ff7a5313e.mockapi.io/categories").then((res) => {
-                return res.json();
-            }).then((data) => {
-                setCategories(data);
-            })
-        }
 
-        getCategories();
+        setIslaoding(true);
+        axios.get("https://6666d762a2f8516ff7a5313e.mockapi.io/categories")
+            .then((res) => {
+                setCategories(res.data);
+            }).catch((err) => {
+                console.log(err);
+
+            }).finally(() => {
+                setIslaoding(false);
+            })
     }, []);
 
 
@@ -24,16 +29,19 @@ function Category() {
                     <h2 className="my-4">Makeup Categories</h2>
                     <div className="row">
                         {
+                            (isLoading === true) ? <div class="spinner-border text-danger" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div> : null
+                        }
+                        {
                             categories.map((category, index) => {
                                 return (
-                                    <>
-                                        <div className="col-md-3">
-                                            <div className="topImg">
-                                                <img src={category.image} className="img-fluid" />
-                                            </div>
-                                            <h3 className="text-center">{category.name}</h3>
+                                    <div className="col-md-3" key={index}>
+                                        <div className="topImg">
+                                            <img src={category.image} className="img-fluid" />
                                         </div>
-                                    </>
+                                        <h3 className="text-center">{category.name}</h3>
+                                    </div>
                                 )
                             })
                         }
