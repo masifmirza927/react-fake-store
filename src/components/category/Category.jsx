@@ -29,8 +29,8 @@ function Category() {
                     <h2 className="my-4">Makeup Categories</h2>
                     <div className="row">
                         {
-                            (isLoading === true) ? <div class="spinner-border text-danger" role="status">
-                                <span class="visually-hidden">Loading...</span>
+                            (isLoading === true) ? <div className="spinner-border text-danger" role="status">
+                                <span className="visually-hidden">Loading...</span>
                             </div> : null
                         }
                         {

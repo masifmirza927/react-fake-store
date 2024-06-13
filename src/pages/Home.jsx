@@ -4,6 +4,7 @@ import Header from '../components/header/Header'
 import headerBg from "../images/header-bg.avif"
 import Features from '../components/features/Features'
 import Category from '../components/category/Category'
+import Product from '../components/products/Product'
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
                 <Header />
                 <Features />
                 <Category />
+                <Product />
             </div>
         </>
     )
