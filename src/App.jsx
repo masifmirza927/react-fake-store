@@ -1,22 +1,28 @@
 import { useState } from 'react'
+import { Routes, Route } from "react-router-dom";
+
 import './App.css'
 import Navbar from './components/navbar/Navbar'
-import Header from './components/header/Header'
-import headerBg from "./images/header-bg.avif"
-import Features from './components/features/Features'
-import Category from './components/category/Category'
+
+// pages
+import About from "./pages/About";
+import Contact from './pages/Contact';
+import Home from './pages/Home';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div className='header' style={{ backgroundImage: `url(${headerBg})` }}>
-        <Navbar />
-        <Header />
-        <Features />
-        <Category />
-      </div>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/contact' element={<Contact />} />
+      </Routes>
+
+
+
 
     </>
   )
