@@ -75,6 +75,11 @@ function Navbar() {
                                     Contacts
                                 </Link>
                             </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/create">
+                                    Create
+                                </Link>
+                            </li>
                         </ul>
                         <form className="d-flex" role="search">
                             <input

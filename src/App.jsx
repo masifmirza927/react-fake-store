@@ -9,6 +9,10 @@ import About from "./pages/About";
 import Contact from './pages/Contact';
 import Home from './pages/Home';
 import ProductDetail from './pages/ProductDetail';
+import Create from './pages/Create';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,11 +25,21 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/product/details/:pid' element={<ProductDetail />} />
+        <Route path='/create' element={<Create />} />
       </Routes>
-
-
-
-
+      <ToastContainer
+        position="top-center"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition:Bounce
+      />
     </>
   )
 }
