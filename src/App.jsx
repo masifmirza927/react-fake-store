@@ -12,6 +12,8 @@ import ProductDetail from './pages/ProductDetail';
 import Create from './pages/Create';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Dashboard from './pages/Dashboard';
+import Edit from './pages/Edit';
 
 
 function App() {
@@ -25,8 +27,11 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/product/details/:pid' element={<ProductDetail />} />
+        <Route path='/product/update/:pid' element={<Edit />} />
         <Route path='/create' element={<Create />} />
+        <Route path='/dashboard' element={<Dashboard />} />
       </Routes>
+
       <ToastContainer
         position="top-center"
         autoClose={1000}
